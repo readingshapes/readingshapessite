@@ -37,11 +37,11 @@ body {
 }
 .content {
 	display: flex;
+    flex: 0 0 auto;
 	margin: 0 auto;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
-	max-width: 100%;
     flex-direction: row;
 }
 .heading {
@@ -69,13 +69,14 @@ body {
     color: inherit;
 	cursor: pointer;
 	width: calc(50% - 6rem);
-	height: 480px;
+	height: 50vh;
 	perspective: 600px;
 	margin: 3rem;
 	position: relative;
 }
 .front, .back {
 	display: flex;
+    flex: 0 0 auto;
 	border-radius: 4px;
 	background-position: center;
 	background-size: contain;
@@ -92,74 +93,55 @@ body {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	transform-style: preserve-3d;
-	transition: ease-in-out 750ms;	
+	transition: ease-in-out 800ms;	
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width:950px) {
 .card {
-	width: 60%;
+    width: 50vw;
 }
 .front, .back {
-	width: 100%;
     height: 100%;
 }
 }
     
-@media screen and (max-width: 992px) {
+@media screen and (max-width:800px) {
 .card {
-	width: 60%;
+    width: 50vw;
 }
 .front, .back {
-	width: 100%;
-    height: 100%;
-}
-}
-
-@media screen and (max-width: 768px) {
-.card {
-	width: 100%;
-}
-.front, .back {
-	width: 100%;
-}
-}
-
-@media screen and (max-width: 576px) {
-.card {
-	width: 100%;
-}
-.front, .back {
-	width: 100%;
     height: 100%;
 }
 }
     
+@media screen and (max-width:767px) {
+.card {
+    width: 85vw;
+}
+.front, .back {
+    height: 100%;
+}
+}
+   
 @media screen and (max-width: 414px) {
 .card {
-	width: 100%;
+    height: 25vh;
 }
 .front, .back {
-	width: 100%;
     height: 100%;
 }
 }
+    
 .front {
 	background-size: cover;
 	padding: 2rem;
-	font-size: 1.618rem;
-	font-weight: 600;
 	color: #fff;
-	overflow: hidden;
-	font-family: Poppins, sans-serif;
+	overflow:visible ;
 }
 .front:before {
 	position: absolute;
-	display: block;
-	content: "";
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	display: flex;
+    flex: 0 0 auto;
 	background: none;
 	z-index: -1;
 }
@@ -172,11 +154,8 @@ body {
 .back {
 	background-size: cover;
 	padding: 0 2em;
-	font-size: 1.618rem;
-	font-weight: 600;
 	color: #fff;
-	overflow: hidden;
-	font-family: Poppins, sans-serif;
+	overflow: visible;
 	transform: rotateY(-180deg);
 }
 .card:hover .back {
@@ -200,24 +179,24 @@ body {
 </div>
 <!--start cards here-->
 <div class="content"> <a class="card" href="https://raw.githubusercontent.com/readingshapes/readingshapessite/gh-pages/nicethingsdownload.png">
-  <div class="front" style="background-image: url(card_small_back_nicethings.png)"> </div>
-  <div class="back" style="background-image: url(card_small_front_nicethings.png)"> </div>
+  <div class="front" style="background-image: url(file:///C|/Users/karis/OneDrive/Documents/Github/readingshapessite/card_small_back_nicethings.png)"> </div>
+  <div class="back" style="background-image: url(file:///C|/Users/karis/OneDrive/Documents/Github/readingshapessite/card_small_front_nicethings.png)"> </div>
   </a> 
     <a class="card" href="https://raw.githubusercontent.com/readingshapes/readingshapessite/gh-pages/alonedownload.png"> <!--Die Alone-->
-  <div class="front" style="background-image: url(card_small_back_alone.png)"> </div>
-  <div class="back" style="background-image: url(card_small_front_alone.png)"> </div>
+  <div class="front" style="background-image: url(file:///C|/Users/karis/OneDrive/Documents/Github/readingshapessite/card_small_back_alone.png)"> </div>
+  <div class="back" style="background-image: url(file:///C|/Users/karis/OneDrive/Documents/Github/readingshapessite/card_small_front_alone.png)"> </div>
   </a> 
     <a class="card" href="https://raw.githubusercontent.com/readingshapes/readingshapessite/gh-pages/impossibledownload.png"> <!--Impossible Task-->
-  <div class="front" style="background-image: url(card_small_back_impossible.png)"> </div>
-  <div class="back" style="background-image: url(card_small_front_impossible.png)"> </div>
+  <div class="front" style="background-image: url(file:///C|/Users/karis/OneDrive/Documents/Github/readingshapessite/card_small_back_impossible.png)"> </div>
+  <div class="back" style="background-image: url(file:///C|/Users/karis/OneDrive/Documents/Github/readingshapessite/card_small_front_impossible.png)"> </div>
   </a> 
     <a class="card" href="https://raw.githubusercontent.com/readingshapes/readingshapessite/gh-pages/fuckeddownload.png"> <!--Everything is Fucked-->
-  <div class="front" style="background-image: url(card_small_back_fucked.png)"> </div>
-  <div class="back" style="background-image: url(card_small_front_fucked.png)"> </div>
+  <div class="front" style="background-image: url(file:///C|/Users/karis/OneDrive/Documents/Github/readingshapessite/card_small_back_fucked.png)"> </div>
+  <div class="back" style="background-image: url(file:///C|/Users/karis/OneDrive/Documents/Github/readingshapessite/card_small_front_fucked.png)"> </div>
   </a> 
     <a class="card" href="https://raw.githubusercontent.com/readingshapes/readingshapessite/gh-pages/sensitive_download.png"> <!--Too Sensitive-->
-  <div class="front" style="background-image: url(too_sensitive_front.png)"> </div>
-  <div class="back" style="background-image: url(too_sensitive_back.png)"> </div>
+  <div class="front" style="background-image: url(file:///C|/Users/karis/OneDrive/Documents/Github/readingshapessite/too_sensitive_front.png)"> </div>
+  <div class="back" style="background-image: url(file:///C|/Users/karis/OneDrive/Documents/Github/readingshapessite/too_sensitive_back.png)"> </div>
   </a>
 </div>
 </body>
