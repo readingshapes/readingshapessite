@@ -1,0 +1,170 @@
+<!doctype html>
+<!--Happy Birthday!-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
+<!--responsive card flips-->
+<title>Happy Birthday, Shannon!</title>
+<!--    // Scss Document-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@900&display=swap');
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+}
+html {
+	font-size: 14px;
+	line-height: 1.5;
+	font-weight: 300;
+	margin-left: 3rem;
+	margin-right: 3rem;
+	color: #333;
+	font-family: 'Arima Madurai', cursive;
+}
+h2 {
+	font-size: 18px;
+	line-height: 1.5;
+	font-weight: 300;
+	color: #333;
+	font-family: 'Arima Madurai', cursive;
+}
+body {
+	margin: 2rem;
+	padding: 1px;
+	height: 100vh;
+	background-color: #ffffff;
+	background-attachment: local;
+}
+.content {
+	display: flex;
+	flex: 0 0 auto;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+    color: #333;
+	font-family: 'Arima Madurai', cursive;
+    font-size: 14px;
+	line-height: 1.5;
+	font-weight: 300;
+}
+.heading {
+	width: 100%;
+	margin-left: 1rem;
+	font-weight: 800;
+	font-size: 1.918rem;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 0.1ch;
+	line-height: 1.85rem;
+	padding-bottom: 1.25rem;
+	margin-bottom: 1.15rem;
+	margin-top: 1.5rem;
+	position: relative;
+    font-family: 'Arima Madurai', cursive;
+}
+.description {
+	width: 100%;
+	margin-top: 0;
+	margin-left: 1rem;
+	margin-bottom: 3rem;
+	text-align: center;
+    font-family: 'Arima Madurai', cursive;
+}
+.card {
+	color: inherit;
+	cursor: pointer;
+	width: calc(60% - 6rem);
+	height: 68vh;
+	perspective: 950px;
+	margin: 2rem;
+	position: relative;
+}
+.front, .back {
+	display: flex;
+	flex: 0 0 auto;
+	border-radius: 3px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: ffffff;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	height: 100%;
+	min-width: 100%;
+	padding: 1.0rem;
+	margin: 0 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transition: ease-in-out 800ms;
+}
+
+@media screen and (max-width:767px) {
+.card {
+	width: 85vw;
+}
+.front, .back {
+	height: 100%;
+}
+}
+
+@media screen and (max-width: 414px) {
+.card {
+	height: 25vh;
+}
+.front, .back {
+	height: 100%;
+}
+}
+.front {
+	background-size: cover;
+	padding: 1rem;
+	color: #fff;
+	overflow: visible;
+}
+.front:before {
+	position: absolute;
+	display: flex;
+	flex: 0 0 auto;
+	background: none;
+	z-index: -1;
+}
+.card:hover .front {
+	transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .front {
+	transform: rotateY(-180deg);
+}
+.back {
+	background-size: cover;
+	padding: 1rem;
+	color: #fff;
+	overflow: visible;
+	transform: rotateY(-180deg);
+}
+.card:hover .back {
+	transform: rotateY(0deg);
+}
+.card:nth-child(even) .back {
+	transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .back {
+	transform: rotateY(0deg);
+}
+</style>
+</head>
+<body>
+<div class="content"> <br>
+  <h1 class="heading">Happy Birthday, Shannon!</h1>
+  <br>
+</div><!--start cards here-->
+<div class="content"> <a class="card"> <!--shannon 2021-->
+  <div class="front" style="background-image: url(img/Hepbirf.png)"> </div>
+  <div class="back" style="background-image: url(img/Hepbirf_back.png)"> </div>
+  </a>
+    </div>
+</body>
+</html>
