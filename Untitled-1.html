@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+    
+    @supports (translate: 0) {
+    /* Individual transform properties are supported */
+    div {
+        translate: 100px 100px;
+    }
+}
+
+@supports not (translate: 0) {
+    /* Individual transform properties are NOT supported */
+    div {
+        transform: translate(100px, 100px);
+    }
+}
+
+<body>
+</body>
+</html>

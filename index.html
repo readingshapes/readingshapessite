@@ -11,7 +11,7 @@
 *, *:before, *:after {
 	box-sizing: border-box;
 }
-}
+
 html {
 	font-size: 14px;
 	line-height: 1.5;
@@ -96,7 +96,7 @@ body {
 	min-width: 100%;
 	padding: 1.2rem;
 	margin: 0 0;
-/*	-webkit-backface-visibility: hidden;*/
+	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	transform-style: preserve-3d;
 	transition: ease-in-out 800ms;
@@ -146,6 +146,10 @@ body {
 .card:nth-child(even):hover .front {
 	transform: rotateY(-180deg);
 }
+.card:nth-child(odd):hover .front {
+    -webkit-transform: -webkit-translateY(-180deg);
+	transform: rotateY(-180deg);
+}
 .back {
 	background-size: cover;
 	padding: 1rem;
@@ -160,6 +164,14 @@ body {
 	transform: rotateY(180deg);
 }
 .card:nth-child(even):hover .back {
+	transform: rotateY(0deg);
+}
+.card:nth-child(odd) .back {
+    -webkit-transform: -webkit-translateY(180deg);
+	transform: rotateY(180deg);
+}
+.card:nth-child(odd):hover .back {
+    -webkit-transform: -webkit-translateY(0deg);
 	transform: rotateY(0deg);
 }
 </style>
