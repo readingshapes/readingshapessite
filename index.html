@@ -74,8 +74,8 @@ body {
 .card {
 	color: inherit;
 	cursor: pointer;
-	width: calc(50% - 6rem);
-	height: 30vh;
+	width: calc(50% - 4rem);
+	height: 50vh;
 	perspective: 950px;
 	margin: 2rem;
 	position: relative;
@@ -160,6 +160,20 @@ body {
 		justify-content: center;
 	}
 	} */
+
+	@media screen and (max-width:767px) {
+.card {
+	width: 100%;
+    height: 75vh;
+}
+.front, .back {
+	height: 100%;
+}
+.flex-container {
+    flex-direction: column;
+}
+}
+
 @media screen and (max-width: 414px) {
 	.card {
 		width: 100%;
@@ -178,8 +192,7 @@ body {
 <div class="content"> <br>
   <h1 class="heading">Fear Flashcards</h1>
   <h2 class="description">For when you need a pep talk.</h2>
-  <p>As I was searching the internet for positive affirmations to help manage my anxiety, I came across a ton of bullshit platitudes that make no sense. Trust the process? Everything happens for a reason? Please.</p>
-  <p>So, I made my own flashcards, with messages that are actually helpful.</p>
+  <p>flashcards with messages that are actually helpful.</p>
     <br>
     <p>Go <a href="full_platitudes.html"> here for Fulsome Platitudes.</a></p>
   <br>
