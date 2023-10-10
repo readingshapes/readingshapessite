@@ -1,0 +1,180 @@
+<!doctype html>
+<!--Fear Flashcards-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
+<!--responsive card flips-->
+<title>Fear Flashcards test</title>
+<!--    // Scss Document-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 14px;
+	line-height: 1.0;
+	font-weight: 300;
+	margin-left: 3rem;
+	margin-right: 3rem;
+	color: #333;
+	font-family: 'Comfortaa', cursive;
+}
+h2 {
+	font-size: 18px;
+	line-height: 1.2;
+	font-weight: 300;
+	color: #333;
+	font-family: 'Comfortaa', cursive;
+}
+h4 {
+	font-size: 14px;
+	line-height: 1.0;
+	font-weight: 200;
+	color: #333;
+	font-family: 'Comfortaa', cursive;
+}
+body {
+	margin: 2rem;
+	padding: 1px;
+	height: 100vh;
+	background-color: #ffffff;
+	background-attachment: local;
+}
+
+.container {
+    display: flex; 
+    flex-flow: row wrap;
+	flex: 0 0 auto;
+	margin: 0 auto;
+	align-items: center;
+/*  color: #333;
+	font-family: 'Comfortaa', cursive;
+    font-size: 14px;
+	line-height: 1.2;
+	font-weight: 200; */
+  justify-content: space-between;
+  /* align-content: space-between; */
+  gap: 10px 10px;
+  height: 600px;
+}
+
+/* .container>* {
+        flex: 1 1 auto;
+    } */
+
+/* .item { 
+  flex: 1 1 auto;
+  position: relative;
+} */
+
+.card {
+    color: inherit;
+    cursor: pointer;
+    perspective: 950px;
+    margin: 2rem;
+    position: relative;
+    width: calc(50% - 4rem);
+    height: 60vh;
+}
+
+.front .back {
+	display: flex;
+	flex: 0 0 auto;
+	/* border-radius: 3px; */
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: ffffff;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	height: 100%;
+	min-width: 100%;
+	/* padding: 1.2rem; */
+	margin: 0 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transition: ease-in-out 800ms;
+
+}
+
+ .front {
+	background-size: cover;
+	padding: 1rem;
+	color: #fff;
+	overflow: visible;
+}
+
+.front:before {
+	position: absolute;
+	display: flex;
+	flex: 0 0 auto;
+	background: none;
+	z-index: -1;
+}
+
+.card:hover .front {
+	transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .front {
+	transform: rotateY(-180deg);
+}
+.card:nth-child(odd):hover .front {
+    -webkit-transform: -webkit-translateY(-180deg);
+	transform: rotateY(-180deg);
+}
+
+ .back {
+	background-size: cover;
+	padding: 1rem;
+	color: #fff;
+	overflow: visible;
+	transform: rotateY(-180deg);
+}
+
+.card:hover .back {
+	transform: rotateY(0deg);
+}
+
+.card:nth-child(even) .back {
+	transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .back {
+	transform: rotateY(0deg);
+}
+.card:nth-child(odd) .back {
+    -webkit-transform: -webkit-translateY(180deg);
+	transform: rotateY(180deg);
+}
+.card:nth-child(odd):hover .back {
+    -webkit-transform: -webkit-translateY(0deg);
+	transform: rotateY(0deg);
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <a class="card">
+      <div class="front" style="background-image: url(img/itllhurt_front.png)"> </div>
+      <div class="back" style="background-image: url(img/itllhurt_back.png)"> </div>
+    </a>
+    <a class="card">
+      <div class="front" style="background-image: url(img/notreal_front.png)"> </div>
+      <div class="back" style="background-image: url(img/notreal_back.png)"> </div>
+    </a>
+    <a class="card">
+      <div class="front" style="background-image: url(img/otherpeoplefront.png)"> </div>
+      <div class="back" style="background-image: url(img/otherpeopleback.png)"> </div>
+    </a>
+    <a class="card">
+      <div class="front" style="background-image: url(img/small_increments_front.png)"> </div>
+      <div class="back" style="background-image: url(img/small_increments_back.png)"> </div>
+    </a>
+</div>
+</body>
+</html>
