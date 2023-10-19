@@ -1,278 +1,375 @@
 <!doctype html>
 <!--Fear Flashcards-->
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
-<!--responsive card flips-->
-<title>Fear Flashcards</title>
-<!--    // Scss Document-->
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-*, *:before, *:after {
-	box-sizing: border-box;
-}
-html {
-	font-size: 14px;
-	line-height: 1.0;
-	font-weight: 300;
-	margin-left: 3rem;
-	margin-right: 3rem;
-	color: #333;
-	font-family: 'Comfortaa', cursive;
-}
-h2 {
-	font-size: 18px;
-	line-height: 1.2;
-	font-weight: 300;
-	color: #333;
-	font-family: 'Comfortaa', cursive;
-}
-h4 {
-	font-size: 14px;
-	line-height: 1.0;
-	font-weight: 200;
-	color: #333;
-	font-family: 'Comfortaa', cursive;
-}
-body {
-	margin: 2rem;
-	padding: 1px;
-	height: 100vh;
-	background-color: #ffffff;
-	background-attachment: local;
-}
-.content {
-	display: flex;
-	flex: 0 0 auto;
-	margin: 0 auto;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	flex-direction: row;
-    color: #333;
-	font-family: 'Comfortaa', cursive;
-    font-size: 14px;
-	line-height: 1.2;
-	font-weight: 200;
-}
-.heading {
-	width: 100%;
-	margin-left: 1rem;
-	font-weight: 800;
-	font-size: 1.918rem;
-	text-transform: uppercase;
-	text-align: center;
-	letter-spacing: 0.1ch;
-	line-height: 1.85rem;
-	padding-bottom: 1.25rem;
-	margin-bottom: 1.15rem;
-	margin-top: 1.5rem;
-	position: relative;
-    font-family: 'Comfortaa', cursive;
-}
-.description {
-	width: 100%;
-	margin-top: 0;
-	margin-left: 1rem;
-	margin-bottom: 3rem;
-	text-align: center;
-    font-family: 'Comfortaa', cursive;
-}
-.card {
-	color: inherit;
-	cursor: pointer;
-	width: calc(50% - 4rem);
-	height: 60vh;
-	perspective: 950px;
-	margin: 2rem;
-	position: relative;
-}
-.front, .back {
-	display: flex;
-	flex: 0 0 auto;
-	/* border-radius: 3px; */
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-color: ffffff;
-	justify-content: space-between;
-	align-items: center;
-	position: absolute;
-	height: 100%;
-	min-width: 100%;
-	/* padding: 1.2rem; */
-	margin: 0 0;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	transform-style: preserve-3d;
-	transition: ease-in-out 800ms;
-}
-.front {
-	background-size: cover;
-	padding: 1rem;
-	color: #fff;
-	overflow: visible;
-}
-.front:before {
-	position: absolute;
-	display: flex;
-	flex: 0 0 auto;
-	background: none;
-	z-index: -1;
-}
-.card:hover .front {
-	transform: rotateY(180deg);
-}
-.card:nth-child(even):hover .front {
-	transform: rotateY(-180deg);
-}
-.card:nth-child(odd):hover .front {
-    -webkit-transform: -webkit-translateY(-180deg);
-	transform: rotateY(-180deg);
-}
-.back {
-	background-size: cover;
-	padding: 1rem;
-	color: #fff;
-	overflow: visible;
-	transform: rotateY(-180deg);
-}
-.card:hover .back {
-	transform: rotateY(0deg);
-}
-.card:nth-child(even) .back {
-	transform: rotateY(180deg);
-}
-.card:nth-child(even):hover .back {
-	transform: rotateY(0deg);
-}
-.card:nth-child(odd) .back {
-    -webkit-transform: -webkit-translateY(180deg);
-	transform: rotateY(180deg);
-}
-.card:nth-child(odd):hover .back {
-    -webkit-transform: -webkit-translateY(0deg);
-	transform: rotateY(0deg);
-}
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+      charset="utf-8"
+    />
+    <!--responsive card flips-->
+    <title>Fear Flashcards</title>
+    <!--    // Scss Document-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 300;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        color: #333;
+        font-family: "Comfortaa", cursive;
+      }
+      h2 {
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 300;
+        color: #333;
+        font-family: "Comfortaa", cursive;
+      }
+      h4 {
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 200;
+        color: #333;
+        font-family: "Comfortaa", cursive;
+      }
+      body {
+        margin: 2rem;
+        padding: 1px;
+        height: 100vh;
+        background-color: #ffffff;
+        background-attachment: local;
+      }
+      .content {
+        display: flex;
+        flex: 0 0 auto;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        color: #333;
+        font-family: "Comfortaa", cursive;
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 200;
+      }
+      .heading {
+        width: 100%;
+        margin-left: 1rem;
+        font-weight: 800;
+        font-size: 1.918rem;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.1ch;
+        line-height: 1.85rem;
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.15rem;
+        margin-top: 1.5rem;
+        position: relative;
+        font-family: "Comfortaa", cursive;
+      }
+      .description {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 1rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        font-family: "Comfortaa", cursive;
+      }
+      .card {
+        color: inherit;
+        cursor: pointer;
+        width: calc(50% - 4rem);
+        height: 60vh;
+        perspective: 950px;
+        margin: 2rem;
+        position: relative;
+      }
+      .front,
+      .back {
+        display: flex;
+        flex: 0 0 auto;
+        /* border-radius: 3px; */
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: ffffff;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        min-width: 100%;
+        /* padding: 1.2rem; */
+        margin: 0 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        transition: ease-in-out 800ms;
+      }
+      .front {
+        background-size: cover;
+        padding: 1rem;
+        color: #fff;
+        overflow: visible;
+      }
+      .front:before {
+        position: absolute;
+        display: flex;
+        flex: 0 0 auto;
+        background: none;
+        z-index: -1;
+      }
+      .card:hover .front {
+        transform: rotateY(180deg);
+      }
+      .card:nth-child(even):hover .front {
+        transform: rotateY(-180deg);
+      }
+      .card:nth-child(odd):hover .front {
+        -webkit-transform: -webkit-translateY(-180deg);
+        transform: rotateY(-180deg);
+      }
+      .back {
+        background-size: cover;
+        padding: 1rem;
+        color: #fff;
+        overflow: visible;
+        transform: rotateY(-180deg);
+      }
+      .card:hover .back {
+        transform: rotateY(0deg);
+      }
+      .card:nth-child(even) .back {
+        transform: rotateY(180deg);
+      }
+      .card:nth-child(even):hover .back {
+        transform: rotateY(0deg);
+      }
+      .card:nth-child(odd) .back {
+        -webkit-transform: -webkit-translateY(180deg);
+        transform: rotateY(180deg);
+      }
+      .card:nth-child(odd):hover .back {
+        -webkit-transform: -webkit-translateY(0deg);
+        transform: rotateY(0deg);
+      }
 
-@media screen and (max-width:1400px) {
-.card {
-	/* width: 70%; */
-	width: calc(50% - 4rem);
-    height: 55vh;
-}
-.front, .back {
-	height: 100%;
-}
-.flex-container {
-    flex-direction: column;
-}
-}
+      @media screen and (max-width: 1400px) {
+        .card {
+          /* width: 70%; */
+          width: calc(50% - 4rem);
+          height: 55vh;
+        }
+        .front,
+        .back {
+          height: 100%;
+        }
+        .flex-container {
+          flex-direction: column;
+        }
+      }
 
-@media screen and (max-width:1024px) {
-.card {
-	width: 70%;
-	/* width: calc(50% - 4rem); */
-    height: 55vh;
-}
-.front, .back {
-	height: 100%;
-}
-.flex-container {
-    flex-direction: column;
-}
-}
+      @media screen and (max-width: 1024px) {
+        .card {
+          width: 70%;
+          /* width: calc(50% - 4rem); */
+          height: 55vh;
+        }
+        .front,
+        .back {
+          height: 100%;
+        }
+        .flex-container {
+          flex-direction: column;
+        }
+      }
 
-@media screen and (max-width:767px) {
-.card {
-	width: calc(50% - 4rem);
-	height: calc(30vh - 4rem);
-}
-.front, .back {
-	height: 100%;
-}
-.flex-container {
-    flex-direction: column;
-}
-}
+      @media screen and (max-width: 767px) {
+        .card {
+          width: calc(50% - 4rem);
+          height: calc(30vh - 4rem);
+        }
+        .front,
+        .back {
+          height: 100%;
+        }
+        .flex-container {
+          flex-direction: column;
+        }
+      }
 
-@media screen and (max-width:607px) {
-.card {
-	width: 80%;
-	/* width: calc(50% - 2rem); */
-    /* height: 55vh; */
-	height: 35vh;
-}
-.front, .back {
-	height: 100%;
-}
-.flex-container {
-    flex-direction: column;
-}
-}
+      @media screen and (max-width: 607px) {
+        .card {
+          width: 80%;
+          /* width: calc(50% - 2rem); */
+          /* height: 55vh; */
+          height: 35vh;
+        }
+        .front,
+        .back {
+          height: 100%;
+        }
+        .flex-container {
+          flex-direction: column;
+        }
+      }
 
-@media screen and (max-width: 414px) {
-	.card {
-		width: 100%;
-		height: 20vh;
-	}
-	.front, .back {
-		height: 100%;
-	}
-	.flex-container {
-		flex-direction: column;
-	}
-}
-</style>
-</head>
-<body>
-<div class="content"> <br>
-  <h1 class="heading">Fear Flashcards</h1>
-  <h2 class="description">For when you need a pep talk.</h2>
-  <h4>flashcards with messages that are actually helpful.</h4>
-  <h4>Go <a href="full_platitudes.html"> here for Fulsome Platitudes.</a></h4>
-</div><!--start cards here-->
-<div class="content"> 
-	<a class="card"> <!--it'll hurt-->
-		<div class="front" style="background-image: url(img/itllhurt_front.png)"> </div>
-		<div class="back" style="background-image: url(img/itllhurt_back.png)"> </div>
-	</a>
-	<a class="card"> <!--not real-->
-		<div class="front" style="background-image: url(img/notreal_front.png)"> </div>
-		<div class="back" style="background-image: url(img/notreal_back.png)"> </div>
-	</a>
-	<a class="card"> <!--other people-->
-		<div class="front" style="background-image: url(img/otherpeoplefront.png)"> </div>
-		<div class="back" style="background-image: url(img/otherpeopleback.png)"> </div>
-	</a>
-	<a class="card"> <!--small increments-->
-		<div class="front" style="background-image: url(img/small_increments_front.png)"> </div>
-		<div class="back" style="background-image: url(img/small_increments_back.png)"> </div>
-	</a> 
-	<a class="card"> <!--Not Good Enough-->
-		<div class="front" style="background-image: url(img/hurt_front.png)"> </div>
-		<div class="back" style="background-image: url(img/hurt_back.png)"> </div>
-	</a> 
-	<a class="card"> <!--Too Sensitive-->
-		<div class="front" style="background-image: url(img/too_sensitive_front.png)"> </div>
-		<div class="back" style="background-image: url(img/too_sensitive_back.png)"> </div>
-	</a> 
-	<a class="card"> <!--Nice Things-->
-		<div class="front" style="background-image: url(img/card_small_back_nicethings.png)"> </div>
-		<div class="back" style="background-image: url(img/card_small_front_nicethings.png)"> </div>
-	</a> 
-	<a class="card" > <!--Die Alone-->
-		<div class="front" style="background-image: url(img/card_small_back_alone.png)"> </div>
-		<div class="back" style="background-image: url(img/card_small_front_alone.png)"> </div>
-	</a> 
-	<a class="card" > <!--Impossible Task-->
-		<div class="front" style="background-image: url(img/card_small_back_impossible.png)"> </div>
-		<div class="back" style="background-image: url(img/card_small_front_impossible.png)"> </div>
-	</a> 
-	<a class="card" > <!--Everything is Fucked-->
-		<div class="front" style="background-image: url(img/card_small_back_fucked.png)"> </div>
-		<div class="back" style="background-image: url(img/card_small_front_fucked.png)"> </div>
-	</a> 
+      @media screen and (max-width: 414px) {
+        .card {
+          width: 100%;
+          height: 20vh;
+        }
+        .front,
+        .back {
+          height: 100%;
+        }
+        .flex-container {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <br />
+      <h1 class="heading">Fear Flashcards</h1>
+      <h2 class="description">For when you need a pep talk.</h2>
+      <h4>flashcards with messages that are actually helpful.</h4>
+      <h4>
+        Go <a href="full_platitudes.html"> here for Fulsome Platitudes.</a>
+      </h4>
     </div>
-</body>
+    <!--start cards here-->
+    <div class="content">
+      <a class="card">
+        <!--rejection-->
+        <div
+          class="front"
+          style="background-image: url(img/rejection_front.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/rejection_back.png)"
+        ></div>
+      </a>
+      <a class="card">
+        <!--it'll hurt-->
+        <div
+          class="front"
+          style="background-image: url(img/itllhurt_front.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/itllhurt_back.png)"
+        ></div>
+      </a>
+      <a class="card">
+        <!--not real-->
+        <div
+          class="front"
+          style="background-image: url(img/notreal_front.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/notreal_back.png)"
+        ></div>
+      </a>
+      <a class="card">
+        <!--other people-->
+        <div
+          class="front"
+          style="background-image: url(img/otherpeoplefront.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/otherpeopleback.png)"
+        ></div>
+      </a>
+      <a class="card">
+        <!--small increments-->
+        <div
+          class="front"
+          style="background-image: url(img/small_increments_front.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/small_increments_back.png)"
+        ></div>
+      </a>
+      <a class="card">
+        <!--Not Good Enough-->
+        <div
+          class="front"
+          style="background-image: url(img/hurt_front.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/hurt_back.png)"
+        ></div>
+      </a>
+      <a class="card">
+        <!--Too Sensitive-->
+        <div
+          class="front"
+          style="background-image: url(img/too_sensitive_front.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/too_sensitive_back.png)"
+        ></div>
+      </a>
+      <a class="card">
+        <!--Nice Things-->
+        <div
+          class="front"
+          style="background-image: url(img/card_small_back_nicethings.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/card_small_front_nicethings.png)"
+        ></div>
+      </a>
+      <a class="card">
+        <!--Die Alone-->
+        <div
+          class="front"
+          style="background-image: url(img/card_small_back_alone.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/card_small_front_alone.png)"
+        ></div>
+      </a>
+      <a class="card">
+        <!--Impossible Task-->
+        <div
+          class="front"
+          style="background-image: url(img/card_small_back_impossible.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/card_small_front_impossible.png)"
+        ></div>
+      </a>
+      <a class="card">
+        <!--Everything is Fucked-->
+        <div
+          class="front"
+          style="background-image: url(img/card_small_back_fucked.png)"
+        ></div>
+        <div
+          class="back"
+          style="background-image: url(img/card_small_front_fucked.png)"
+        ></div>
+      </a>
+    </div>
+  </body>
 </html>
